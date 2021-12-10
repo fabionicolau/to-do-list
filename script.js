@@ -32,22 +32,21 @@ function completedList(event) {
 }
 document.addEventListener('dblclick', completedList);
 
-// perguntar
+// referência: https://www.geeksforgeeks.org/remove-all-the-child-elements-of-a-dom-node-in-javascript/#:~:text=Child%20nodes%20can%20be%20removed,which%20produces%20the%20same%20output.
 function eraseAll() {
   const taskList = document.getElementById('lista-tarefas');
-  while (taskList.hasChildNodes) {
-    taskList.removeChild(taskList.firstChild);
+  while (taskList.lastElementChild) {
+    taskList.removeChild(taskList.lastElementChild);
   }
 }
 const eraseButton = document.getElementById('apaga-tudo');
 eraseButton.addEventListener('click', eraseAll);
 
-// perguntar
 function eraseCompleted() {
   const taskList = document.getElementById('lista-tarefas');
-  const list = document.getElementsByClassName('list');
+  const list = document.getElementsByClassName('completed');
   for (let i = 0; i < list.length; i += 1) {
-    if (list[i].classList.contains('completed')) {
+    while (list[i].classList.contains('completed')) {
       taskList.removeChild(list[i]);
     }
   }
