@@ -1,24 +1,22 @@
-function createTaskButton() {
-  const button = document.getElementById('criar-tarefa');
-  const OrderedList = document.getElementById('lista-tarefas');
-  const input = document.getElementById('texto-tarefa');
-  function createTask() {
-    const listChild = document.createElement('li');
-    listChild.innerText = input.value;
-    OrderedList.appendChild(listChild);
-    input.value = '';
-  }
-  button.addEventListener('click', createTask);
+const button = document.getElementById('criar-tarefa');
+const OrderedList = document.getElementById('lista-tarefas');
+const input = document.getElementById('texto-tarefa');
+function createTask() {
+  const listChild = document.createElement('li');
+  listChild.innerText = input.value;
+  listChild.classList.add('list');
+  OrderedList.appendChild(listChild);
+  input.value = '';
 }
-createTaskButton();
+button.addEventListener('click', createTask);
 
 function listSelected(event) {
-  const list = document.getElementsByTagName('li');
+  const list = document.getElementsByClassName('list');
   for (let i = 0; i < list.length; i += 1) {
-    if (list[i].style.backgroundColor === 'rgb(128, 128, 128)') {
-      list[i].style.backgroundColor = '';
+    if (event.target.classList.contains('list')) {
+      list[i].classList.remove('selected');
+      event.target.classList.add('selected');
     }
-    event.target.style.backgroundColor = 'rgb(128, 128, 128)';
   }
 }
 document.addEventListener('click', listSelected);
