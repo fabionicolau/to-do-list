@@ -42,14 +42,27 @@ function eraseAll() {
 const eraseButton = document.getElementById('apaga-tudo');
 eraseButton.addEventListener('click', eraseAll);
 
+//
 function eraseCompleted() {
   const taskList = document.getElementById('lista-tarefas');
   const list = document.getElementsByClassName('completed');
   for (let i = 0; i < list.length; i += 1) {
-    while (list[i].classList.contains('completed')) {
+    while (list[i] && list[i].classList && list[i].classList.contains('completed')) {
       taskList.removeChild(list[i]);
     }
   }
 }
 const eraseCompletedButton = document.getElementById('remover-finalizados');
 eraseCompletedButton.addEventListener('click', eraseCompleted);
+
+function eraseSelected() {
+  const taskList = document.getElementById('lista-tarefas');
+  const list = document.getElementsByClassName('selected');
+  for (let i = 0; i < list.length; i += 1) {
+    while (list[i] && list[i].classList && list[i].classList.contains('selected')) {
+      taskList.removeChild(list[i]);
+    }
+  }
+}
+const eraseSelectedButton = document.getElementById('remover-selecionado');
+eraseSelectedButton.addEventListener('click', eraseSelected);
