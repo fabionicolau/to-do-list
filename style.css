@@ -3,14 +3,61 @@
   padding: 0px;
 } */
 
+body {
+background-color: #0B6B53;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+main {
+  border-radius: 5%;
+  padding: 30px;
+  margin-top: 40px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+}
+
+#criar-tarefa {
+  background-color: #1ABD2A;
+  color: white;
+}
+
+#remover-selecionado {
+  background-color: red;
+  color: white;
+}
+
+#remover-finalizados, #apaga-tudo {
+  background-color: red;
+  color: white;
+}
+
+#salvar-tarefas, #mover-cima, #mover-baixo {
+  background-color: #0689CC;
+  color: white;
+} 
+
+.buttons-top {
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  padding: 0;
+}
+
 .completed {
-  text-decoration: line-through solid rgb(0, 0, 0);
+  text-decoration: line-through solid rgb(0 , 0 , 0);
 }
 
 .selected {
-  background-color: rgb(128, 128, 128);
+  background-color: rgb(128 , 128 , 128);
 }
 
 #nav-bottom {
   margin-top: 7px;
+  border-top: 1px solid grey;
+  padding-top: 8px;
 }

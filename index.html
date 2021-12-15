@@ -8,27 +8,29 @@
     <title>To do List</title>
   </head>
   <body>
-    <header>
-      <h1>Minha Lista de Tarefas</h1>
-      <p id="funcionamento">
-        Clique duas vezes em um item para marcá-lo como completo
-      </p>
-    </header>
-    <nav id='nav-top'>
-      <input type="text" name="text" id="texto-tarefa" />
-      <button id="criar-tarefa">Criar Tarefa</button>
-    </nav>
-    <section>
-      <ol id="lista-tarefas"></ol>
-    </section>
-    <nav id='nav-bottom'>
-      <button id="remover-finalizados">Remover Finalizados</button>
-      <button id="apaga-tudo">Apagar tudo</button>
-      <button id="remover-selecionado">Remover selecionado</button>
-      <button id='salvar-tarefas'>Salvar tarefas</button>
-      <button id='mover-cima'>Cima</button>
-      <button id='mover-baixo'>Baixo</button>
-    </nav>
+    <main>
+      <header>
+        <h1>Minha Lista de Tarefas</h1>
+        <p id="funcionamento">
+          Clique duas vezes em um item para marcá-lo como completo
+        </p>
+      </header>
+      <nav id="nav-top">
+        <input type="text" name="text" id="texto-tarefa" placeholder="adicione sua tarefa" />
+        <button class='buttons-top' id="criar-tarefa">+</button>
+        <button class='buttons-top' id="remover-selecionado">-</button>
+        <button class='buttons-top' id="mover-cima">&#8593</button>
+        <button class='buttons-top' id="mover-baixo">&#8595</button>
+      </nav>
+      <section>
+        <ol id="lista-tarefas"></ol>
+      </section>
+      <nav id="nav-bottom">
+        <button id="salvar-tarefas">Salvar</button>
+        <button id="remover-finalizados">Limpar completos</button>
+        <button id="apaga-tudo">Limpar tudo</button>               
+      </nav>
+    </main>
     <script src="script.js"></script>
   </body>
 </html>
