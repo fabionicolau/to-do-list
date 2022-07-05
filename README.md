@@ -10,4 +10,4 @@
 </ul>
 
 <h1>Nota</h1>
-<img src="./to-do-list.png" alt="nota do projeto" width='800' height='450'>
+<img src="./to-do-List.png" alt="nota do projeto" width='800' height='450'>
